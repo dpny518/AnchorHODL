@@ -1,3 +1,28 @@
+## Easy way to start it
+Open Amazon Light Sail Server
+Follow this and stop after install docker
+```
+https://habr.com/en/post/448108/
+```
+Open up ports in networking, tcp and udp
+
+Edit Dockerfile, paste your seed phrase in the Dockerfile, where it says paste your seed phrase
+update config.py for the parameters you want
+
+Run the docker
+```
+docker build -t anchor .
+docker run -d -p 5000:5000 anchor:latest
+```
+Have it restart unless stopped
+get your docker id
+```
+docker ps
+```
+docker update --restart unless-stopped [docker id]
+
+
+
 ## Why
 My day job requires a fairly good amount of automation from time to time. Besides, I do like computers to work on what I cannot while I'm sleeping!
 
