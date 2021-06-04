@@ -2,7 +2,7 @@ import os
 
 mnemonic = os.environ.get('MNEMONIC')
 target_percent = 80
-trigger_at_percent = 85
+trigger_at_percent = 90
 
 # (True or False)
 enabled_auto_borrow = True
