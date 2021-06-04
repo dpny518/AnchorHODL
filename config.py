@@ -1,6 +1,6 @@
 import os
 
-mnemonic = os.environ.get('MNEMONIC', 'paste your seed here')
+mnemonic = os.environ.get('MNEMONIC')
 target_percent = 80
 trigger_at_percent = 85
 
