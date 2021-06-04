@@ -1,7 +1,7 @@
 import os
 
 mnemonic = os.environ.get('MNEMONIC')
-target_percent = 80
+target_percent = 70
 trigger_at_percent = 90
 
 # (True or False)
