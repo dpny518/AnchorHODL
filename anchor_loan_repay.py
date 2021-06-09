@@ -261,8 +261,15 @@ def keep_loan_safe():
             # Finally withdraw form anchor ...
             withdraw_from_anchor_tx = execute_withdraw_ust_from_anchor(repay_amount)
             sleep(0.5)
-
-        loan_repay_tx = execute_loan_repay(repay_amount)
+        get_balance_wallet_ust = balance.get('uusd')
+        balance_in_wallet=int(get_balance_wallet_ust.amount / 1000000)
+        if int(balance_in_wallet - 10) >= int(repay_amount):
+            loan_repay_tx = execute_loan_repay(repay_amount)
+        elif int(balance_in_wallet) >= 50:
+            loan_repay_tx = execute_loan_repay(balance_in_wallet)
+        else:
+            # If less than $10 in Anchor, do nothing!
+            return False
         sleep(0.5)
 
         if not check_tx_info(loan_repay_tx):
