@@ -10,4 +10,5 @@ ENV FLASK_DEBUG False
 ENV FLASK_APP "webview.py"
 ENV MNEMONIC "paste your seed here"
 
-CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["gunicorn"  , "-b", "0.0.0.0:5000", "webview:app"]
+
